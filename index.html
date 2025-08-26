@@ -30,12 +30,8 @@
     <!-- Votre CSS -->
     <link rel="stylesheet" href="style.css">
     
-    EmailJS (version unique)
+    <!-- EmailJS (version unique) -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // Initialisation correcte avec votre User ID (pas le Service ID)
-        emailjs.init('le0cvM-CPwZcErMGC'); // Remplacez par votre vrai User ID
-    </script>
 </head>
 
 <body>
@@ -89,7 +85,7 @@
                 </ul>
             </div>
         </div>
-    <!-- </nav> -->
+    </nav>
 
 
 
@@ -205,11 +201,11 @@
 
     <section id="top-ventes" class="py-5 bg-light section">
         <div class="container">
-            <h2 class="  mb-5 fw-bold section-title text-warning">Nos Miels <span title="Miel">🍯</span></h2>
+            <h2 class="mb-5 fw-bold section-title text-warning">Nos Miels <span title="Miel">🍯</span></h2>
             <div class="row g-4">
                 <!-- Carte 1 : Miel de Lavande -->
-                <div class="col-lg-6 ">
-                    <div class=" h-100 border-0 shadow-sm card top-ventes-card ">
+                <div class="col-lg-6">
+                    <div class="h-100 border-0 shadow-sm card top-ventes-card">
                         <div class="row g-0 h-100">
                             <!-- Colonne vidéo -->
                             <div class="col-md-5 position-relative video-container">
@@ -218,7 +214,7 @@
                                 </div>
                                 <video class="w-100 h-100" muted loop playsinline
                                     poster="images/poster-miel-lavande.jpg">
-                                    <source src="/video/Miel_lavandes.mp4#t=0.1" type="video/mp4">
+                                    <source src="video/Miel_lavandes.mp4" type="video/mp4">
                                 </video>
                                 <span
                                     class="position-absolute top-0 start-0 bg-warning text-dark px-2 py-1 small fw-bold">
@@ -244,7 +240,7 @@
                             <!-- Colonne contenu -->
                             <div class="col-md-7 d-flex flex-column">
                                 <div class="card-body p-2">
-                                    <h5 class=" card-title text-center fw-medium mb-2">Miel de Lavande</h5>
+                                    <h5 class="card-title text-center fw-medium mb-2">Miel de Lavande</h5>
                                     <div class="d-flex align-items-center mb-2 text-muted small">
                                         <i class="bi bi-flower1 text-warning me-2"></i>
                                         <span class="from-tips">Provenance: Haute-Provence</span>
@@ -284,7 +280,7 @@
 
                 <!-- Carte 2 : Miel Crémeux -->
                 <div class="col-lg-6">
-                    <div class=" h-100 border-0 shadow-sm card top-ventes-card">
+                    <div class="h-100 border-0 shadow-sm card top-ventes-card">
                         <div class="row g-0 h-100">
                             <!-- Colonne vidéo -->
                             <div class="col-md-5 position-relative video-container">
@@ -293,7 +289,7 @@
                                 </div>
                                 <video class="w-100 h-100" muted loop playsinline
                                     poster="images/poster-miel-lavande.jpg">
-                                    <source src="/video/Miel_cremeux.mp4#t=0.1" type="video/mp4">
+                                    <source src="video/Miel_cremeux.mp4" type="video/mp4">
                                 </video>
                                 <span
                                     class="position-absolute top-0 start-0 bg-warning text-dark px-2 py-1 small fw-bold">
@@ -423,7 +419,7 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100">
                         <div class="honey-img-container ps-4">
-                            <img src="img/chateigne.png" class="card-img-top mx-auto " alt="Miel Châtaigner">
+                            <img src="img/chateigne.png" class="card-img-top mx-auto" alt="Miel Châtaigner">
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title fw-medium">Châtaignier</h5>
@@ -501,7 +497,7 @@
                 <!-- Carte 4 : Bruyère -->
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100">
-                        <div class="honey-img-container ">
+                        <div class="honey-img-container">
                             <img src="img/bruyere.png" class="card-img-top mx-auto" alt="Miel Bruyère">
                         </div>
                         <div class="card-body text-center">
@@ -527,7 +523,7 @@
 
     <section id="gourmandises" class="section py-2">
         <div class="container pt-5">
-            <h2 class="text-start section-title mb-4 ">Nos Gourmandises <span title="Gourmandises">🍬</span></h2>
+            <h2 class="text-start section-title mb-4">Nos Gourmandises <span title="Gourmandises">🍬</span></h2>
 
             <!-- Première ligne de produits -->
             <div class="row g-4">
@@ -535,7 +531,9 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise/lingo1.png" class="card-img-top mx-auto"
+
+
+                            <img src="images/gourmandise/lingo1.png" class="card-img-top mx-auto"
                                 alt="Lingot de chocolat au miel">
                         </div>
                         <div class="card-body text-center">
@@ -554,7 +552,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/chocolat.png" class="card-img-top mx-auto"
+                            <img src="images/gourmandise1/chocolat.png" class="card-img-top mx-auto"
                                 alt="Tablette de Chocolat au Miel">
                         </div>
                         <div class="card-body text-center">
@@ -573,7 +571,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise/sucette1.png" class="card-img-top mx-auto"
+                            <img src="images/gourmandise/sucette1.png" class="card-img-top mx-auto"
                                 alt="Sucettes Chocolat Miel">
                         </div>
                         <div class="card-body text-center">
@@ -592,7 +590,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/caramiel.png" class="card-img-top mx-auto" alt="Caramiel">
+                            <img src="images/gourmandise1/caramiel.png" class="card-img-top mx-auto" alt="Caramiel">
                         </div>
                         <div class="card-body text-center">
                             <h3 class="card-title fw-medium">Caramiel</h3>
@@ -613,7 +611,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/bonbon3.png" class="card-img-top mx-auto"
+                            <img src="images/gourmandise1/bonbon3.png" class="card-img-top mx-auto"
                                 alt="Bonbons Fourrés au Miel">
                         </div>
                         <div class="card-body text-center">
@@ -632,11 +630,11 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/nougat.png" class="card-img-top mx-auto"
+                            <img src="images/gourmandise1/nougat.png" class="card-img-top mx-auto"
                                 alt="Nougat au Miel">
                         </div>
                         <div class="card-body text-center">
-                            <h3 class="card-title fw-medium ">Nougat Artisanal</h3>
+                            <h3 class="card-title fw-medium">Nougat Artisanal</h3>
                             <p class="card-text">Nougat préparé avec notre miel de lavande et amandes
                                 grillées</p>
                             <div class="mt-auto">
@@ -653,10 +651,10 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/sable.png" class="card-img-top mx-auto" alt="Sablés au Miel">
+                            <img src="images/gourmandise1/sable.png" class="card-img-top mx-auto" alt="Sablés au Miel">
                         </div>
                         <div class="card-body text-center">
-                            <h3 class="card-title fw-medium ">Sablés au Miel</h3>
+                            <h3 class="card-title fw-medium">Sablés au Miel</h3>
                             <p class="card-text">Biscuits sablés fondants préparés avec notre miel artisanal</p>
                             <div class="mt-auto">
                                 <p class="price">7€ / 250gr</p>
@@ -671,7 +669,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100">
                         <div class="card-img-container">
-                            <img src="/images/gourmandise1/pollen.png" class="card-img-top mx-auto" alt="Pollen Frais">
+                            <img src="images/gourmandise1/pollen.png" class="card-img-top mx-auto" alt="Pollen Frais">
                         </div>
                         <div class="card-body text-center">
                             <h3 class="card-title fw-medium">Pollen Frais</h3>
@@ -708,22 +706,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Section Contact ******************************************-->
     <section id="contact" class="section">
         <div class="container">
@@ -733,22 +715,22 @@
                 <!-- Colonne Formulaire -->
                 <div class="col-lg-5 col-md-12 mb-4">
                     <div class="card h-100">
-                        <div class="card-header bg-white ">
-                            <h3 class="mb-2 text-center text-dark ">Nous contacter </h3>
+                        <div class="card-header bg-white">
+                            <h3 class="mb-2 text-center text-dark">Nous contacter</h3>
                         </div>
                         <div class="card-body">
 
 
                             <!-- Adresse -->
                             <div class="contact-info mb-2 text-center">
-                                <p class="h5 mb-1 ">Le Rucher de BEE BEE</p>
-                                <address class="d-inline-block text-start ">
+                                <p class="h5 mb-1">Le Rucher de BEE BEE</p>
+                                <address class="d-inline-block text-start">
                                     <p class="mb-1">
                                         <i class="fas fa-map-marker-alt me-2 address-icon"></i>Route de La Motte
                                     </p>
                                     <p class="mb-1">83720 Trans-en-Provence, France</p>
                                     <p class="mb-1">
-                                        <i class="fab fa-whatsapp me-2 address-icon "></i>+33 4 12 34 56 78
+                                        <i class="fab fa-whatsapp me-2 address-icon"></i>+33 4 12 34 56 78
                                     </p>
                                     <p class="">
                                         <i class="fas fa-envelope me-2 address-icon"></i>contact@lerucherdebeebee.com
@@ -778,7 +760,7 @@
                 <div class="col-lg-7 col-md-12 mb-4">
                     <div class="card h-100">
                         <div class="card-header bg-white">
-                            <h3 class="mb-2 text-center text-dark ">Nous trouver </h3>
+                            <h3 class="mb-2 text-center text-dark">Nous trouver</h3>
                         </div>
                         <div class="card-body d-flex flex-column">
 
@@ -874,14 +856,14 @@
 
     <section id="blog" class="section">
         <div class="container">
-            <h2 class=" section-title text-start">Blog & Réseaux<span title="Articles et actualités"> 📝</span></h2>
+            <h2 class="section-title text-start">Blog & Réseaux<span title="Articles et actualités"> 📝</span></h2>
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card text-center">
                         <div class="card-header bg-transparent">
 
                         </div>
-                        <div class="card-body ">
+                        <div class="card-body">
                             <h5 class="card-title">Abonnez-vous !</h5>
                             <p class="card-text">
                                 Plongez dans l'univers fascinant de l'apiculture provençale, <br>pour une immersion
@@ -925,8 +907,6 @@
                         83720 Trans-en-Provence, France<br>
                         Téléphone : +33 4 12 34 56 78<br>
                         Email : contact@lerucherdebeebee.com
-
-                        const serviceID = "default_service";
                     </p>
                 </div>
 
@@ -935,7 +915,7 @@
                     <h4>Informations</h4>
                     <ul class="list-unstyled">
                         <li><a href="mentions-legales.html">Mentions Légales</a> |</li>
-                        <li><a href="politique-de-confidentialite.html">Politique de Confidentialité</li>
+                        <li><a href="politique-de-confidentialite.html">Politique de Confidentialité</a></li>
                         <li><a href="politique-des-cookies.html">Politique des Cookies</a></li>
                         <li><a href="conditions-generales-de-vente.html">CGV</a></li>
                     </ul>
