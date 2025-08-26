@@ -41,6 +41,7 @@
             <!-- Logo -->
             <a class="navbar-brand" href="#">
                 <img src="images/Logo/logo-white.png" alt="Logo Le Rucher de BEE BEE" width="100">
+                <span class="brand-name">Le Rucher de BEE BEE</span>
             </a>
 
             <!-- Bouton pour le menu responsive -->
@@ -748,10 +749,6 @@
                                 data-bs-target="#contactModal">
                                 Click ICI
                             </button>
-
-                            <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
-                                <i class="fas fa-check-circle me-2"></i> Votre message a été envoyé avec succès !
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -839,9 +836,9 @@
                                 <div class="valid-feedback">✓ Message valide</div>
                             </div>
                         </form>
-                    </div>
-                    <div id="successMessage" class="alert alert-success d-none">
-                        Votre message a été envoyé avec succès!
+                        <div id="successMessage" class="alert alert-success" style="display: none;">
+                            Votre message a été envoyé avec succès!
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -946,20 +943,168 @@
 <!-- Scripts dans cet ordre précis -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    // Initialisation EmailJS avec votre Public Key
-    (function() {
-        emailjs.init('KhxImNPaqdEpEJ189')
-        .then(function() {
-            console.log('EmailJS prêt - Service ID: service_lerucher');
-        })
-        .catch(function(error) {
-            console.error('Erreur initialisation EmailJS:', error);
-        });
-    })();
-</script>
-<script src="contact-form.js" defer></script>
+
 <script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuration EmailJS
+    const EMAILJS_CONFIG = {
+        SERVICE_ID: 'service_lerucher',
+        TEMPLATE_ID: 'template_m6edxvm',
+        PUBLIC_KEY: 'KhxImNPaqdEpEJ189'
+    };
+
+    // Initialisation EmailJS
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
+    // Vérification des éléments
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) {
+        console.error('Formulaire non trouvé');
+        return;
+    }
+
+    // Fonctions de validation
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+        // Le champ téléphone est optionnel, mais s'il est rempli, il doit être valide.
+        return !phone || /^[0-9]{10}$/.test(phone);
+    }
+
+    // Validation en temps réel
+    contactForm.querySelectorAll('input, textarea, select').forEach(function(input) {
+        input.addEventListener('input', function() {
+            if (this.id === 'email') {
+                const isValid = validateEmail(this.value);
+                this.classList.toggle('is-valid', isValid && this.value);
+                this.classList.toggle('is-invalid', !isValid && this.value);
+            } else if (this.id === 'phone') {
+                const isValid = validatePhone(this.value);
+                this.classList.toggle('is-valid', isValid && this.value);
+                this.classList.toggle('is-invalid', !isValid && this.value);
+            } else if (this.required) {
+                 const isValid = this.value.trim() !== '';
+                 this.classList.toggle('is-valid', isValid);
+                 this.classList.toggle('is-invalid', !isValid);
+            }
+        });
+    });
+
+    // Fonction d'envoi
+    async function sendEmail(formData) {
+        try {
+            const response = await emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ID,
+                {
+                    from_name: `${formData.firstName} ${formData.lastName}`,
+                    from_email: formData.email,
+                    phone: formData.phone || 'Non fourni',
+                    demande: formData.demande,
+                    message: formData.message,
+                    date: new Date().toLocaleString('fr-FR')
+                }
+            );
+            return { success: true, data: response };
+        } catch (error) {
+            return { success: false, error: error };
+        }
+    }
+
+    // Gestion de la soumission
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Validation avant envoi
+        let isFormValid = true;
+        contactForm.querySelectorAll('[required], #phone').forEach(function(field) {
+            let isValid = true;
+            if (field.required && !field.value.trim()) {
+                isValid = false;
+            }
+            if (field.id === 'email' && !validateEmail(field.value)) {
+                isValid = false;
+            }
+            if (field.id === 'phone' && !validatePhone(field.value)) {
+                isValid = false;
+            }
+
+            field.classList.toggle('is-valid', isValid);
+            field.classList.toggle('is-invalid', !isValid);
+
+            if (!isValid) {
+                isFormValid = false;
+            }
+        });
+
+        if (!isFormValid) {
+            const firstInvalid = contactForm.querySelector('.is-invalid');
+            if (firstInvalid) {
+                firstInvalid.focus();
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+        
+        // Désactiver le bouton
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="spinner-border spinner-border-sm"></span>
+            Envoi en cours...
+        `;
+
+        // Récupération des données
+        const formData = {
+            firstName: contactForm.firstName.value.trim(),
+            lastName: contactForm.lastName.value.trim(),
+            email: contactForm.email.value.trim(),
+            phone: contactForm.phone.value.trim(),
+            demande: contactForm.demande.value,
+            message: contactForm.message.value.trim()
+        };
+
+        // Envoi de l'email
+        const result = await sendEmail(formData);
+
+        // Traitement du résultat
+        const modal = bootstrap.Modal.getInstance(contactForm.closest('.modal'));
+        const alertDiv = document.createElement('div');
+        
+        if (result.success) {
+            alertDiv.className = 'alert alert-success';
+            alertDiv.textContent = 'Message envoyé avec succès!';
+            contactForm.reset();
+            contactForm.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
+                el.classList.remove('is-valid', 'is-invalid');
+            });
+        } else {
+            console.error('Erreur EmailJS:', result.error);
+            alertDiv.className = 'alert alert-danger';
+            alertDiv.innerHTML = `
+                Erreur d'envoi (${result.error.status})<br>
+                ${result.error.text || 'Veuillez réessayer plus tard'}
+            `;
+        }
+
+        // Affichage du message
+        contactForm.prepend(alertDiv);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer';
+
+        // Fermeture automatique
+        setTimeout(() => {
+            alertDiv.remove();
+            if (result.success && modal) {
+                modal.hide();
+            }
+        }, 5000);
+    });
+});
+</script>
 </body>
 
 </html>

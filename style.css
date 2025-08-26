@@ -32,6 +32,39 @@ body {
     padding: 20px 0;
 
 }
+/* BRAND NAME***********************/
+
+/* Brand name styling with Indie Flower font */
+.brand-name {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #080808;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  color: #B8935A;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.75rem;
+  }
+}
 
 /* ======================== */
 /* === Titres généraux ==== */
