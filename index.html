@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src * 'unsafe-inline' 'unsafe-eval';
+    script-src * 'unsafe-inline' 'unsafe-eval';
+    connect-src * 'unsafe-inline';
+    img-src * data: 'unsafe-inline';
+    style-src * 'unsafe-inline';
+    ">
+    <title>Le Rucher de BEE BEE</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (version unique) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <!-- Votre CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    EmailJS (version unique)
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialisation correcte avec votre User ID (pas le Service ID)
+        emailjs.init('le0cvM-CPwZcErMGC'); // Remplacez par votre vrai User ID
+    </script>
+</head>
+
+<body>
+    <!-- Barre de menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/Logo/logo-white.png" alt="Logo Le Rucher de BEE BEE" width="100">
+            </a>
+
+            <!-- Bouton pour le menu responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Liens du menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#acceuil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apropos">À propos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMiel" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nos Miels
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMiel">
+                            <li><a class="dropdown-item" href="#top-ventes">Top Ventes</a></li>
+                            <li><a class="dropdown-item" href="#miel-classiques">Miels Classiques</a></li>
+                            <li><a class="dropdown-item" href="#miel-region">Miels de La Région</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gourmandises">Gourmandises</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="parrainage.html">Parrainage</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <!-- </nav> -->
+
+
+
+
+    <section id="acceuil" class="hero-section ">
+    <div class="container-fluid ">
+        <picture>
+            <!-- Image mobile -->
+            <source media="(max-width: 768px)" srcset="./images/acceuil/Image collée (3).png">
+            <!-- Image desktop -->
+            <img src="./images/acceuil/Image collée (3).png" class="w-100 hero-bg-image"
+                alt="Ruche et abeilles dans un champ fleuri">
+        </picture>
+
+        <!-- Contenu texte sur l'image -->
+        <div class="container mb-5  w-100 h-100 ">
+            <div class="row w-100 ">
+                <div class="col-12 col-md-12 offset-md-12 text-center">
+                    <h1 class="main-title text-center fst-italic">
+                      <span style="color: #FFFFFF">L</span>
+                        <span style="color: #FFF9C4">e</span>
+                        <span style="color: #FFF8B1"> </span>
+                        <span style="color: #FFF59D">R</span>
+                        <span style="color: #FFF38A">u</span>
+                        <span style="color: #FFF176">c</span>
+                        <span style="color: #FFEE58">h</span>
+                        <span style="color: #FFEB3B">e</span>
+                        <span style="color: #FFE929">r</span>
+                        <span style="color: #FFE600"> </span>
+                        <span style="color: #FFE100">d</span>
+                        <span style="color: #FFDD00">e</span>
+                        <span style="color: #FFD800"> </span>
+                        <span style="color: #FFD400">B</span>
+                        <span style="color: #FFD000">e</span>
+                        <span style="color: #FFCC00">e</span>
+                        <span style="color: #FFC800"> </span>
+                        <span style="color: #FFC400">B</span>
+                        <span style="color: #FFC000">e</span>
+                        <span style="color: #FFBC00">e</span>
+                    </h1>
+
+                    <h2 class="no-underline text-light poetic-slogan text-capitalize">
+                        La vie est une fleur <span title="emojie-fleur">🌸</span> L’amour en est le miel<span title="Miel">🍯</span>
+                    </h2>
+
+                    <div class="d-flex justify-content-center">
+                        <a href="#apropos" class="btn btn-warning mt-3">Découvrez notre histoire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Section À propos -->
+    <section id="apropos" class="section ">
+        <div class="container ">
+            <div class="row align-items-stretch">
+                <!-- Colonne 1 : Texte -->
+                <div class="col-md-7 order-md-1 order-2">
+                    <div class="h-100 d-flex flex-column">
+                        <h2 class="mb-4 text-start section-title text-light">À propos d'nous <span
+                                title="Ruche">🐝</span></h2>
+
+                        <div class="flex-grow-1">
+                            <p class="lead mb-3 ">
+                                Benjamin Poirier, 43 ans, est apiculteur professionnel installé à La Ciotat, au cœur des
+                                paysages méditerranéens entre mer et collines. Son attachement profond à la nature et
+                                aux insectes pollinisateurs l'a conduit à se spécialiser dans l'élevage des abeilles et
+                                la production artisanale de miel.
+                            </p>
+
+                            <p class="mb-2 small">
+                                Porté par des valeurs d'écologie et d'autonomie, Benjamin se reconvertit et obtient son
+                                BPREA en apiculture.
+                            </p>
+
+                            <p class="mb-3 small">
+                                Aujourd'hui, il gère plusieurs ruchers dans la région de La Ciotat, produit un miel
+                                local non chauffé et extrait à froid, reflet fidèle de la flore méditerranéenne.
+                                Pédagogue engagé, il milite pour une apiculture respectueuse et durable, en harmonie
+                                avec les cycles naturels.
+                            </p>
+                        </div>
+
+                        <div>
+                            <a href="#top-ventes" class="btn btn-primary">Découvrez nos miels</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 : Image -->
+                <div class="col-md-5 order-md-2 order-1 mb-4 mb-md-0 d-flex align-items-center">
+                    <div class="w-100 text-center">
+                        <img src="images/Logo/logo-white.png" class="img-fluid rounded-circle shadow about-image"
+                            alt="À propos de nous">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Section miel -->
+
+    <!-- Top Ventes -->
+
+    <section id="top-ventes" class="py-5 bg-light section">
+        <div class="container">
+            <h2 class="  mb-5 fw-bold section-title text-warning">Nos Miels <span title="Miel">🍯</span></h2>
+            <div class="row g-4">
+                <!-- Carte 1 : Miel de Lavande -->
+                <div class="col-lg-6 ">
+                    <div class=" h-100 border-0 shadow-sm card top-ventes-card ">
+                        <div class="row g-0 h-100">
+                            <!-- Colonne vidéo -->
+                            <div class="col-md-5 position-relative video-container">
+                                <div class="video-overlay">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                                <video class="w-100 h-100" muted loop playsinline
+                                    poster="images/poster-miel-lavande.jpg">
+                                    <source src="/video/Miel_lavandes.mp4#t=0.1" type="video/mp4">
+                                </video>
+                                <span
+                                    class="position-absolute top-0 start-0 bg-warning text-dark px-2 py-1 small fw-bold">
+                                    <i class="bi bi-star-fill me-1"></i> Top ventes
+                                </span>
+                                <div class="video-controls">
+                                    <button class="btn-video-control rewind btn btn-dark btn-sm rounded-circle p-1"
+                                        title="Reculer 10s">
+                                        <i class="bi bi-skip-backward-fill"></i>
+                                    </button>
+                                    <button
+                                        class="btn-video-control play-pause btn btn-warning btn-sm rounded-circle p-1"
+                                        title="Lecture/Pause">
+                                        <i class="bi bi-play-fill"></i>
+                                    </button>
+                                    <button class="btn-video-control forward btn btn-dark btn-sm rounded-circle p-1"
+                                        title="Avancer 10s">
+                                        <i class="bi bi-skip-forward-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Colonne contenu -->
+                            <div class="col-md-7 d-flex flex-column">
+                                <div class="card-body p-2">
+                                    <h5 class=" card-title text-center fw-medium mb-2">Miel de Lavande</h5>
+                                    <div class="d-flex align-items-center mb-2 text-muted small">
+                                        <i class="bi bi-flower1 text-warning me-2"></i>
+                                        <span class="from-tips">Provenance: Haute-Provence</span>
+                                    </div>
+
+                                    <p class="card-text small mb-3">Un miel monofloral délicat aux arômes floraux
+                                        caractéristiques de la lavande.</p>
+
+                                    <div class="degustation-tips">
+                                        <div class="text-warning fw-bold small mb-1">Conseils de dégustation</div>
+                                        <ul class="list-unstyled small mb-0">
+                                            <li class="mb-1"><span class="me-2">☕</span> Dans votre thé du matin</li>
+                                            <li class="mb-1"><span class="me-2">🍞</span> Sur des tartines beurrées</li>
+                                            <li><span class="me-2">🧀</span> Avec du fromage de chèvre</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-transparent border-0 p-2 pt-0 mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="topvente-price text-warning fw-bold small">
+                                            <span class="text-muted">Tarif :</span>
+                                            12€ <small class="text-muted fw-normal">/ 500g</small>
+                                            <span class="text-dark mx-1">-</span>
+                                            20€ <small class="text-muted fw-normal">/ 1kg</small>
+                                        </div>
+                                        <button class="btn btn-warning btn-sm py-1 px-2 fs-6" data-bs-toggle="modal"
+                                            data-bs-target="#contactModal">
+                                            <i class="me-1"></i>J'en veux!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Miel Crémeux -->
+                <div class="col-lg-6">
+                    <div class=" h-100 border-0 shadow-sm card top-ventes-card">
+                        <div class="row g-0 h-100">
+                            <!-- Colonne vidéo -->
+                            <div class="col-md-5 position-relative video-container">
+                                <div class="video-overlay">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                                <video class="w-100 h-100" muted loop playsinline
+                                    poster="images/poster-miel-lavande.jpg">
+                                    <source src="/video/Miel_cremeux.mp4#t=0.1" type="video/mp4">
+                                </video>
+                                <span
+                                    class="position-absolute top-0 start-0 bg-warning text-dark px-2 py-1 small fw-bold">
+                                    <i class="bi bi-star-fill me-1"></i> Top ventes
+                                </span>
+                                <div class="video-controls">
+                                    <button class="btn-video-control rewind btn btn-dark btn-sm rounded-circle p-1"
+                                        title="Reculer 10s">
+                                        <i class="bi bi-skip-backward-fill"></i>
+                                    </button>
+                                    <button
+                                        class="btn-video-control play-pause btn btn-warning btn-sm rounded-circle p-1"
+                                        title="Lecture/Pause">
+                                        <i class="bi bi-play-fill"></i>
+                                    </button>
+                                    <button class="btn-video-control forward btn btn-dark btn-sm rounded-circle p-1"
+                                        title="Avancer 10s">
+                                        <i class="bi bi-skip-forward-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Colonne contenu -->
+                            <div class="col-md-7 d-flex flex-column">
+                                <div class="card-body p-2">
+                                    <h5 class="card-title text-center fw-medium mb-2">Miel Crémeux</h5>
+                                    <div class="d-flex align-items-center mb-2 text-muted small">
+                                        <i class="bi bi-droplet text-warning me-2"></i>
+                                        <span class="from-tips">Texture onctueuse</span>
+                                    </div>
+
+                                    <p class="card-text small mb-3">Un miel doux et velouté, idéal pour tartiner, grâce
+                                        à un procédé de cristallisation maîtrisé.</p>
+
+                                    <div class="degustation-tips">
+                                        <div class="text-warning fw-bold small mb-1">Idées gourmandes</div>
+                                        <ul class="list-unstyled small mb-0">
+                                            <li class="mb-1"><span class="me-2">🥞</span> Sur des pancakes</li>
+                                            <li class="mb-1"><span class="me-2">🍌</span> Avec des fruits frais</li>
+                                            <li><span class="me-2">🍶</span> Dans un yaourt nature</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-transparent border-0 p-3 pt-0 mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="topvente-price text-warning fw-bold small">
+                                            <span class="text-muted">Tarif :</span>
+                                            12€ <small class="text-muted fw-normal">/ 500g</small>
+                                            <span class="text-dark mx-1">-</span>
+                                            20€ <small class="text-muted fw-normal">/ 1kg</small>
+                                        </div>
+                                        <button class="btn btn-warning btn-sm py-1 px-2 fs-6" data-bs-toggle="modal"
+                                            data-bs-target="#contactModal">
+                                            <i class="me-1"></i>J'en veux !
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Section miel -->
+
+    <!-- Miel de region  -->
+
+    <!-- Section Miels Classiques -->
+    <section id="miel-classiques" class="section py-5 pt-2">
+        <div class="container pt-5">
+            <h2 class="text-light section-title text-start">Les Classiques <span title="emojie-fleur">🌸</span></h2>
+            <div class="row">
+                <!-- Carte 1 : L'Immortel -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container">
+                            <img src="img/immortel.png" class="card-img-top mx-auto" alt="Miel L'immortel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">L'Immortel</h5>
+                            <p class="card-text">Douceur ensoleillée, notes florales et accent de Méditerranée.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 8€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Printemps -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container">
+                            <img src="img/printemp.png" class="card-img-top mx-auto" alt="Miel Printemps">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Printemps</h5>
+                            <p class="card-text">Un bouquet fruité et floral, comme une balade en avril.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 8€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Acacia -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container">
+                            <img src="img/acacia.png" class="card-img-top mx-auto" alt="Miel Acacia">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Acacia</h5>
+                            <p class="card-text">Délicatement sucré, fluide et léger comme une brise douce.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 8€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 1 : Châtaignier -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container ps-4">
+                            <img src="img/chateigne.png" class="card-img-top mx-auto " alt="Miel Châtaigner">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Châtaignier</h5>
+                            <p class="card-text">Saveur boisée, caractère fort, l'aventurier des miels foncés.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 9€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Section Miels de Région -->
+    <section id="miel-region" class="section pt-5">
+        <div class="container pt-1">
+            <h2 class="text-light section-title text-start">De La Région <span title="Miels">1️⃣3️⃣</span></h2>
+
+            <div class="row">
+                <!-- Carte 4 : Thym -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container">
+                            <img src="img/thym.png" class="card-img-top mx-auto" alt="Miel Thym">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Thym</h5>
+                            <p class="card-text">Miel corsé et doré, un trésor aux super-pouvoirs naturels.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 8€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Carte 2 : Garrigue -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container miel-region">
+                            <img src="img/guarrige.png" class="card-img-top mx-auto" alt="Miel Garrigue">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Garrigue</h5>
+                            <p class="card-text">Méditerranée en pot : herbes, fleurs et soleil concentrés.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 9€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Lavande -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container">
+                            <img src="img/lavande.png" class="card-img-top mx-auto" alt="Miel Lavande">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Lavande</h5>
+                            <p class="card-text">Un parfum d'été, doux et floral comme un rêve violet.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 9€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 4 : Bruyère -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="honey-img-container ">
+                            <img src="img/bruyere.png" class="card-img-top mx-auto" alt="Miel Bruyère">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-medium">Bruyère</h5>
+                            <p class="card-text">Goût intense, touche florale, la récolte d'une fin d'été.</p>
+                            <p class="card-text fst-italic fw-bold mb-2">Tarif: 9€ / 250gr</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">J'en veux!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="gourmandises" class="section py-2">
+        <div class="container pt-5">
+            <h2 class="text-start section-title mb-4 ">Nos Gourmandises <span title="Gourmandises">🍬</span></h2>
+
+            <!-- Première ligne de produits -->
+            <div class="row g-4">
+                <!-- Carte 1 : Lingot de chocolat au Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise/lingo1.png" class="card-img-top mx-auto"
+                                alt="Lingot de chocolat au miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Lingot de chocolat au miel</h3>
+                            <p class="card-text">L'onctuosité du chocolat mariée à la douceur du miel de Provence</p>
+                            <div class="mt-auto">
+                                <p class="price">8€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Tablette de Chocolat au Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/chocolat.png" class="card-img-top mx-auto"
+                                alt="Tablette de Chocolat au Miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Tablette de Chocolat</h3>
+                            <p class="card-text">Équilibre subtil entre chocolat noir intense et miel naturel</p>
+                            <div class="mt-auto">
+                                <p class="price">8€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Sucettes Chocolat Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise/sucette1.png" class="card-img-top mx-auto"
+                                alt="Sucettes Chocolat Miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Sucettes Chocolat-Miel</h3>
+                            <p class="card-text">Sucettes croquantes enrobées de chocolat et enrichies au miel</p>
+                            <div class="mt-auto">
+                                <p class="price">8€ les 5 pièces</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/caramiel.png" class="card-img-top mx-auto" alt="Caramiel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Caramiel</h3>
+                            <p class="card-text">Miel unique enrichi d'une touche de caramel</p>
+                            <div class="mt-auto">
+                                <p class="price">7€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deuxième ligne de produits -->
+            <div class="row g-4 mt-4">
+                <!-- Carte 5 : Bonbons Fourrés au Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/bonbon3.png" class="card-img-top mx-auto"
+                                alt="Bonbons Fourrés au Miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Bonbons au Miel</h3>
+                            <p class="card-text">Délicieux bonbons fondants garnis d'une généreuse crème au miel</p>
+                            <div class="mt-auto">
+                                <p class="price">7€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 6 : Nougat au Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/nougat.png" class="card-img-top mx-auto"
+                                alt="Nougat au Miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium ">Nougat Artisanal</h3>
+                            <p class="card-text">Nougat préparé avec notre miel de lavande et amandes
+                                grillées</p>
+                            <div class="mt-auto">
+                                <p class="price">8€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 7 : Caramiel -->
+                <!-- Carte 4 : Sablés au Miel -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/sable.png" class="card-img-top mx-auto" alt="Sablés au Miel">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium ">Sablés au Miel</h3>
+                            <p class="card-text">Biscuits sablés fondants préparés avec notre miel artisanal</p>
+                            <div class="mt-auto">
+                                <p class="price">7€ / 250gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 8 : Pollen Frais -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="/images/gourmandise1/pollen.png" class="card-img-top mx-auto" alt="Pollen Frais">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title fw-medium">Pollen Frais</h3>
+                            <p class="card-text">Grains de pollen 100% naturels récoltés à la ruche</p>
+                            <div class="mt-auto">
+                                <p class="price">7€ / sachet de 50gr</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal">Je Goûte!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Section Contact ******************************************-->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-white text-start section-title">Contact <span title="Contact"> 💬 </span></h2>
+
+            <div class="row gx-3">
+                <!-- Colonne Formulaire -->
+                <div class="col-lg-5 col-md-12 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-white ">
+                            <h3 class="mb-2 text-center text-dark ">Nous contacter </h3>
+                        </div>
+                        <div class="card-body">
+
+
+                            <!-- Adresse -->
+                            <div class="contact-info mb-2 text-center">
+                                <p class="h5 mb-1 ">Le Rucher de BEE BEE</p>
+                                <address class="d-inline-block text-start ">
+                                    <p class="mb-1">
+                                        <i class="fas fa-map-marker-alt me-2 address-icon"></i>Route de La Motte
+                                    </p>
+                                    <p class="mb-1">83720 Trans-en-Provence, France</p>
+                                    <p class="mb-1">
+                                        <i class="fab fa-whatsapp me-2 address-icon "></i>+33 4 12 34 56 78
+                                    </p>
+                                    <p class="">
+                                        <i class="fas fa-envelope me-2 address-icon"></i>contact@lerucherdebeebee.com
+                                    </p>
+                                </address>
+
+
+
+                            </div>
+
+                            <p class="text-center text-decoration-underline">OU</p>
+
+                            <!-- Bouton pour ouvrir le modal -->
+                            <button type="button" class="btn btn-primary mb-1 w-50 contact-btn" data-bs-toggle="modal"
+                                data-bs-target="#contactModal">
+                                Click ICI
+                            </button>
+
+                            <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
+                                <i class="fas fa-check-circle me-2"></i> Votre message a été envoyé avec succès !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Carte agrandie -->
+                <div class="col-lg-7 col-md-12 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-white">
+                            <h3 class="mb-2 text-center text-dark ">Nous trouver </h3>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+
+                            <div class="flex-grow-1 map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11632.09107542205!2d5.601128368308594!3d43.17381797959836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b9b9b9b9b9b9%3A0x12c9b9b9b9b9b9b9!2sLa%20Ciotat%2C%2013600!5e0!3m2!1sfr!2sfr!4v1633020000000!5m2!1sfr!2sfr"
+                                    width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <!-- Modal de contact -->
+        <div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="contactModalLabel">Formulaire de contact</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="row mb-2">
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" name="firstName" id="firstName" class="form-control"
+                                        placeholder="Prénom" required>
+                                    <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+                                    <div class="valid-feedback">✓ Valide</div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" name="lastName" id="lastName" class="form-control"
+                                        placeholder="Nom" required>
+                                    <div class="invalid-feedback">Veuillez entrer votre nom.</div>
+                                    <div class="valid-feedback">✓ Valide</div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-md-6 mb-2">
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Adresse e-mail" required>
+                                    <div class="invalid-feedback email-error">Veuillez entrer une adresse email valide
+                                        (ex: exemple@domaine.com)</div>
+                                    <div class="valid-feedback">✓ Format valide</div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <input type="tel" name="phone" id="phone" class="form-control"
+                                        placeholder="Téléphone" pattern="[0-9]{10}">
+                                    <div class="invalid-feedback">Format: 10 chiffres sans espace (ex: 0612345678)</div>
+                                    <div class="valid-feedback">✓ Format valide</div>
+                                </div>
+                            </div>
+
+                            <!-- Sélecteur de demande -->
+                            <div class="mb-2">
+                                <select class="form-select form-select-sm mb-2" name="demande"
+                                    aria-label="Type de demande" required>
+                                    <option value="" selected disabled>Quel est votre demande?</option>
+                                    <option value="Achat de Miel">🍯 Achat de Miel</option>
+                                    <option value="Les Gourmandises">🍬 Les Gourmandises</option>
+                                    <option value="Parrainage de Ruche">🏡 Parrainage de Ruche</option>
+                                </select>
+                                <div class="invalid-feedback">Veuillez sélectionner une option</div>
+                            </div>
+
+                            <div class="mb-2">
+                                <textarea name="message" id="message" class="form-control" placeholder="Votre message"
+                                    rows="5" required></textarea>
+                                <div class="invalid-feedback">Veuillez entrer un message.</div>
+                                <div class="valid-feedback">✓ Message valide</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="successMessage" class="alert alert-success d-none">
+                        Votre message a été envoyé avec succès!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" form="contactForm" id="submitBtn" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class=" section-title text-start">Blog & Réseaux<span title="Articles et actualités"> 📝</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card text-center">
+                        <div class="card-header bg-transparent">
+
+                        </div>
+                        <div class="card-body ">
+                            <h5 class="card-title">Abonnez-vous !</h5>
+                            <p class="card-text">
+                                Plongez dans l'univers fascinant de l'apiculture provençale, <br>pour une immersion
+                                totale au rythme des ruches !
+                            </p>
+
+
+                            <div class="social-icons mt-4 d-flex justify-content-center">
+                                <a href="https://facebook.com" class="btn btn-social btn-primary mx-2" target="_blank">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="https://instagram.com" class="btn btn-social btn-primary mx-2" target="_blank">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://tiktok.com" class="btn btn-social btn-primary mx-2" target="_blank">
+                                    <i class="fab fa-tiktok"></i> TikTok
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-footer text-body-secondary bg-transparent">
+                            Le Rucher de Beebee
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Colonne 1 : Adresse et contact -->
+                <div class="col-md-4">
+                    <h4>Adresse et contact</h4>
+                    <p>
+                        <strong>Le Rucher de BEE BEE</strong><br>
+                        Route de La Motte<br>
+                        83720 Trans-en-Provence, France<br>
+                        Téléphone : +33 4 12 34 56 78<br>
+                        Email : contact@lerucherdebeebee.com
+
+                        const serviceID = "default_service";
+                    </p>
+                </div>
+
+                <!-- Colonne 2 : Mentions légales et politiques -->
+                <div class="col-md-4">
+                    <h4>Informations</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mentions-legales.html">Mentions Légales</a> |</li>
+                        <li><a href="politique-de-confidentialite.html">Politique de Confidentialité</li>
+                        <li><a href="politique-des-cookies.html">Politique des Cookies</a></li>
+                        <li><a href="conditions-generales-de-vente.html">CGV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 : Nos partenaires -->
+                <div class="col-md-4">
+                    <h4>Nos partenaires</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Partenaire 1</a></li>
+                        <li><a href="#">Partenaire 2</a></li>
+                        <li><a href="#">Partenaire 3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pied de page -->
+            <div class="text-center py-3">
+                <p class="mb-0">
+                    Copyright © 2025 - Le Rucher de BEE BEE<br>
+                    Propulsé par <a href="https://www.coconutweb.fr" target="_blank">coconut web</a> - Tous droits
+                    réservés
+                </p>
+            </div>
+        </div>
+    </footer>
+<!-- À placer juste avant la fermeture du </body> -->
+<!-- Scripts dans cet ordre précis -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Initialisation EmailJS avec votre Public Key
+    (function() {
+        emailjs.init('KhxImNPaqdEpEJ189')
+        .then(function() {
+            console.log('EmailJS prêt - Service ID: service_lerucher');
+        })
+        .catch(function(error) {
+            console.error('Erreur initialisation EmailJS:', error);
+        });
+    })();
+</script>
+<script src="contact-form.js" defer></script>
+<script src="script.js"></script>
+</body>
+
+</html>

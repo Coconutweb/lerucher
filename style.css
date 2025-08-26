@@ -1,0 +1,1900 @@
+/* ================== */
+/* === Couleurs ==== */
+/* ================== */
+:root {
+    --noir-profond: #1A1A1A;
+    --blanc: #FFFFFF;
+    --jaune-moderne: #FFC107;
+    --orange-moderne: #FF9800;
+
+    --gris-anthracite: #333333;
+    --degrade-moderne: linear-gradient(45deg, var(--jaune-moderne), var(--orange-moderne));
+
+    --noir-mat: #121212;
+}
+
+/* ======================== */
+/* === Styles généraux ==== */
+/* ======================== */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--blanc);
+    color: var(--noir-profond);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+}
+
+/* ======================== */
+/* === Titres généraux ==== */
+/* ======================== */
+/* ================================= */
+/* ====== TITRES PRINCIPAUX H1 ===== */
+/* ================================= */
+
+/* Classe spéciale pour le h1 principal */
+ .main-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-top: 0px;
+        padding-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        background: transparent !important; /* Fond transparent */
+    }
+    
+    .main-title span {
+        display: inline-block;
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Version responsive pour petits écrans */
+    @media (max-width: 768px) {
+        .main-title {
+            font-size: 2rem;
+        }
+    }
+/* Classe spéciale pour le h2 avec police Indie Flower */
+.poetic-slogan {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* Effet de soulignement créatif */
+.poetic-slogan::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--jaune-moderne), transparent);
+    opacity: 0.7;
+}
+
+/* Animation subtile au survol */
+.poetic-slogan:hover {
+    transform: scale(1.02);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.poetic-slogan {
+    transform: rotate(-1deg);
+    display: inline-block;
+}
+
+.poetic-slogan {
+    background: url('texture-miel.png') center/cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Version responsive */
+@media (max-width: 768px) {
+    .poetic-slogan {
+        font-size: 1.5rem;
+        padding: 0 5px;
+    }
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    color: white;
+    background: transparent;
+}
+
+/* Trait jaune sous le titre */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 60%;
+    background: var(--jaune-moderne);
+    /* utilise ta variable jaune moderne */
+    transition: all 0.3s ease;
+}
+
+/* Centrage du trait si le texte est centré */
+.section-title.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+/* Trait aligné à gauche si aligné à gauche */
+.section-title.text-start::after,
+.section-title.left::after {
+    left: 0;
+    transform: none;
+    width: 60%;
+}
+
+/* Responsive – titre plus petit sur mobile */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.4rem;
+    }
+}
+
+
+/* === Slogan sans soulignement === */
+.section-title.no-underline::after {
+    display: none;
+}
+
+/* =============================== */
+/* === h2 spécifiques en .section */
+/* =============================== */
+.section h2 {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: #FFD700;
+}
+
+.section h2.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+.section h2:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+/* ============================= */
+/* === Cartes avec séparateurs */
+/* ============================= */
+#top-ventes .card-title,
+#miel-classiques .card-title,
+#gourmandises .card-title,
+#parrainage .card-title,
+#contact .card-body h3,
+#blog .card-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+}
+
+#top-ventes .card-title::after,
+#miel-classiques .card-title::after,
+#miel-region .card-title::after,
+#gourmandises .card-title::after,
+#parrainage .card-title::after,
+#contact .card-body h3::after,
+#blog .card-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 12px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 12"><path d="M5,6c0,0,5-5,10-5s5,5,10,5s5-5,10-5s5,5,10,5s5-5,10-5" fill="none" stroke="%23f9a825" stroke-width="2" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ======================= */
+/* === Responsive (mobile)
+/* ======================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        padding-bottom: 12px;
+    }
+
+    h1::after {
+        height: 10px;
+        background-size: contain;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .section h2::after {
+        height: 2px;
+        bottom: -8px;
+        width: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+/* Barre de menu */
+.navbar {
+    background-color: var(--blanc);
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 70px;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+.navbar-brand img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: var(--noir-profond) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--jaune-moderne) !important;
+}
+
+.nav-link.active {
+    color: var(--jaune-moderne) !important;
+}
+
+/* ... (le reste du CSS précédent reste inchangé) ... */
+
+/* Style uniforme pour TOUS les boutons du site */
+.btn-primary,
+.btn-warning,
+.contact-btn,
+.btn-collapse,
+.btn-collapse-small,
+.btn-video-control,
+#acceuil .btn-primary,
+#apropos .btn-primary,
+#miel .btn-primary,
+#gourmandises .btn-primary,
+#blog .btn-primary,
+#contact .btn-primary,
+#miel-classiques .btn-primary,
+#miel-region .btn-primary,
+#parrainage .btn-primary {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    background: var(--degrade-moderne);
+    border: 1px solid var(--noir-profond);
+
+    /* ... (le reste du CSS précédent reste inchangé) ... */
+
+    color: var(--noir-profond);
+    /* Texte noir par défaut */
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Effet au survol pour TOUS les boutons */
+.btn-primary:hover,
+.btn-warning:hover,
+.contact-btn:hover,
+.btn-collapse:hover,
+.btn-collapse-small:hover,
+.btn-video-control:hover,
+#apropos .btn-primary:hover,
+#miel .btn-primary:hover,
+#gourmandises .btn-primary:hover,
+#blog .btn-primary:hover,
+#contact .btn-primary:hover,
+#miel-classiques .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    color: var(--blanc) !important;
+    /* Texte blanc au survol */
+    background: var(--orange-moderne);
+    border-color: var(--noir-profond);
+}
+
+/* Boutons spécifiques - adaptés pour garder la cohérence */
+.btn-collapse-small {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+.btn-video-control {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    color: var(--blanc) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.btn-video-control:hover {
+    background: rgba(255, 193, 7, 0.9) !important;
+    color: var(--blanc) !important;
+}
+
+/* Supprime l'effet bleu de focus Bootstrap sur tous les boutons */
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Supprime aussi pour les boutons spécifiques */
+button:focus,
+button:active,
+button:active:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 70%;
+    object-fit: contain;
+    z-index: -1;
+}
+
+.slogan1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--noir-profond);
+    font-weight: 500;
+    font-family: "Indie Flower", cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section À propos */
+#apropos {
+    padding: 60px 0;
+    background: var(--degrade-moderne);
+    color: var(--blanc);
+    position: relative;
+    overflow: hidden;
+}
+
+#apropos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%23f9a825" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 100px 100px;
+    z-index: 0;
+}
+
+#apropos h2 {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: 2rem;
+    padding-bottom: 15px;
+}
+
+/* Trait sous h2 - aligné à gauche à 60% */
+#apropos h2::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    background: var(--jaune-moderne);
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+#apropos p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--blanc);
+    position: relative;
+    z-index: 1;
+}
+
+.about-image {
+    max-width: 300px;
+    width: 100%;
+    border: 4px solid #FFD700 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+}
+
+/* Style de base pour TOUS les boutons */
+.btn-primary {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--jaune-moderne), var(--orange-moderne));
+    border: 1px solid var(--noir-profond);
+    color: var(--noir-profond);
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Effet hover pour TOUS les boutons .btn-primary */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    color: var(--blanc) !important;
+    background: var(--orange-moderne);
+    border-color: var(--noir-profond);
+}
+
+
+/* Correction spécifique pour le bouton À propos */
+#apropos .btn.btn-primary {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(45deg, #FFC107, #FF9800) !important;
+    border: 1px solid #1A1A1A !important;
+}
+
+#apropos .btn.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4) !important;
+    color: white !important;
+    background: #FF9800 !important;
+    border-color: #1A1A1A !important;
+}
+
+
+/* Version mobile */
+@media (max-width: 768px) {
+    #apropos {
+        padding: 40px 0;
+    }
+
+    .about-image {
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    #apropos h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #apropos h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+    }
+
+    #apropos p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+/* Section Miel ***************************************/
+
+/* Top ventes - Version mobile augmentée */
+#top-ventes {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+
+
+.card.top-ventes-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 320px;
+}
+
+.card.top-ventes-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Styles vidéo (inchangés) */
+.video-container {
+    position: relative;
+    height: 320px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.video-overlay i {
+    font-size: 3rem;
+    color: white;
+    opacity: 0.75;
+    transition: all 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 0;
+}
+
+.video-container:hover .video-overlay i {
+    transform: scale(1.1);
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-controls {
+    opacity: 1;
+}
+
+.btn-video-control {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles contenu */
+.degustation-tips {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border-left: 3px solid var(--bs-warning);
+    font-size: 14px;
+}
+
+.from-tips {
+    font-family: "Indie Flower", cursive;
+}
+
+/* Responsive avec tailles augmentées */
+@media (max-width: 767.98px) {
+    #top-ventes {
+        padding: 2rem 0;
+    }
+
+    .video-container {
+        height: 200px !important;
+    }
+
+    .card.top-ventes-card {
+        max-height: none !important;
+    }
+
+    /* Augmentation des tailles de texte */
+    .card.top-ventes-card .card-title {
+        font-size: 1.5rem !important;
+        /* +15% */
+    }
+
+    .card.top-ventes-card .card-text {
+        font-size: 1.2rem !important;
+        /* +15% */
+        line-height: 1.7;
+    }
+
+    .degustation-tips {
+        font-size: 1.1rem !important;
+        /* 14px → ~15px */
+    }
+
+    .from-tips {
+        font-size: 1.1rem !important;
+        /* +15% */
+    }
+
+    .topvente-price {
+
+        font-size: 1rem !important;
+        /* +15% */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Miel Classique et Région */
+#miel-classiques,
+#miel-region {
+    padding: 60px 0;
+    background: var(--degrade-moderne);
+    position: relative;
+    overflow: hidden;
+    color: var(--blanc);
+}
+
+#miel-classiques::before,
+#miel-region::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%23f9a825" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 100px 100px;
+    z-index: 0;
+}
+
+#miel-classiques h2,
+#miel-region h2 {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    color: var(--brun-dore);
+    margin-bottom: 1rem;
+    padding-bottom: 15px;
+}
+
+/* Trait sous h2 - aligné à gauche à 60% */
+#miel-classiques h2::after,
+#miel-region h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: var(--jaune-moderne);
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+/* Styles des cartes */
+#miel-classiques .card,
+#miel-region .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background: var(--blanc);
+}
+
+#miel-classiques .card:hover,
+#miel-region .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Conteneur images */
+#miel-classiques .honey-img-container,
+#miel-region .honey-img-container {
+    position: relative;
+    padding: 10px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 236, 179, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,5 Q50,30 30,55 Q10,30 30,5" fill="none" stroke="%23f9a825" stroke-width="0.8" opacity="0.15"/></svg>');
+    background-size: 40px 40px;
+    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+}
+
+/* Images */
+#miel-classiques .honey-img-container .card-img-top,
+#miel-region .honey-img-container .card-img-top {
+    max-height: 150px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+#miel-classiques .card:hover .honey-img-container .card-img-top,
+#miel-region .card:hover .honey-img-container .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Corps des cartes */
+#miel-classiques .card-body,
+#miel-region .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--blanc);
+}
+
+/* Titres des cartes */
+#miel-classiques .card-title,
+#miel-region .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gris-anthracite);
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+/* Ondulation sous titres de cartes - centrée */
+#miel-classiques .card-title::after,
+#miel-region .card-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 12px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12'><path d='M5,6c0,0,5-5,10-5s5,5,10,5s5-5,10-5s5,5,10,5s5-5,10-5' fill='none' stroke='%23FF9800' stroke-width='2' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Texte des cartes */
+#miel-classiques .card-text,
+#miel-region .card-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--gris-anthracite);
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+    flex-grow: 1;
+}
+
+#miel-classiques .card-text.fst-italic,
+#miel-region .card-text.fst-italic {
+    font-family: 'Playfair Display', serif;
+    color: var(--jaune-moderne);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Boutons */
+#miel-classiques .btn-primary,
+#miel-region .btn-primary {
+    margin-top: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border: 1px solid var(--noir-profond);
+}
+
+#miel-classiques .btn-primary:hover,
+#miel-region .btn-primary:hover {
+    color: var(--blanc) !important;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+
+    #miel-classiques,
+    #miel-region {
+        padding: 40px 0;
+    }
+
+    #miel-classiques h2,
+    #miel-region h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #miel-classiques h2::after,
+    #miel-region h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+    }
+
+    #miel-classiques .honey-img-container,
+    #miel-region .honey-img-container {
+        min-height: 160px;
+        padding: 15px;
+    }
+
+    #miel-classiques .honey-img-container .card-img-top,
+    #miel-region .honey-img-container .card-img-top {
+        max-height: 120px;
+    }
+
+    #miel-classiques .card-body,
+    #miel-region .card-body {
+        padding: 1rem;
+    }
+
+    #miel-classiques .card-title,
+    #miel-region .card-title {
+        font-size: 1rem;
+    }
+
+    #miel-classiques .card-text,
+    #miel-region .card-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    #miel-classiques .honey-img-container .card-img-top,
+    #miel-region .honey-img-container .card-img-top {
+        max-height: 180px;
+    }
+}
+
+
+
+
+/* Section Gourmandises - EXACTEMENT comme Miel avec fond beige */
+#gourmandises {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    /* Seule différence */
+    position: relative;
+    overflow: hidden;
+    color: var(--blanc);
+}
+
+#gourmandises::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%23f9a825" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 100px 100px;
+    z-index: 0;
+}
+
+#gourmandises .th2 {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    color: var(--brun-dore);
+}
+
+#gourmandises .th2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #FFD700;
+    bottom: -10px;
+    left: 0;
+    border-radius: 3px;
+}
+
+#gourmandises .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background: var(--blanc);
+}
+
+#gourmandises .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+#gourmandises .card-img-container {
+    /* Note: J'ai adapté honey-img-container en card-img-container */
+    position: relative;
+    padding: 10px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 236, 179, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,5 Q50,30 30,55 Q10,30 30,5" fill="none" stroke="%23f9a825" stroke-width="0.8" opacity="0.15"/></svg>');
+    background-size: 40px 40px;
+    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+}
+
+#gourmandises .card-img-top {
+    max-height: 150px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+#gourmandises .card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+#gourmandises .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--blanc);
+}
+
+#gourmandises .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gris-anthracite);
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#gourmandises .card-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--gris-anthracite);
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+    flex-grow: 1;
+}
+
+#gourmandises .price {
+    /* Adapté de .card-text.fst-italic pour votre structure */
+    font-family: 'Playfair Display', serif;
+    color: var(--jaune-moderne);
+    font-size: 0.9rem;
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+}
+
+#gourmandises .btn-primary {
+    margin-top: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border: 1px solid var(--noir-profond);
+}
+
+#gourmandises .btn-primary:hover {
+    color: var(--blanc) !important;
+}
+
+@media (max-width: 767.98px) {
+    #gourmandises .th2 {
+        font-size: 2rem;
+    }
+
+    #gourmandises .card-img-container {
+        min-height: 160px;
+        padding: 15px;
+    }
+
+    #gourmandises .card-img-top {
+        max-height: 120px;
+    }
+
+    #gourmandises .card-body {
+        padding: 1rem;
+    }
+
+    #gourmandises .card-title {
+        font-size: 1rem;
+    }
+
+    #gourmandises .card-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #gourmandises .card-img-top {
+        max-height: 180px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Section Contact ********************************/
+#contact {
+    padding: 40px 0;
+    background: var(--degrade-moderne);
+    color: var(--blanc);
+}
+
+.contact-form {
+    background-color: var(--blanc);
+    padding: 0rem;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e0e0e0;
+    background-color: var(--blanc);
+    color: var(--noir-profond);
+    padding: 10px 12px;
+    transition: all 0.2s;
+}
+
+
+.contact-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--miel);
+    text-align: center;
+    /* Centre le contenu global */
+}
+
+.contact-info address {
+    display: inline-block;
+    text-align: left;
+    /* Aligne le texte à gauche */
+    margin: 0 auto;
+    /* Centre le bloc */
+}
+
+.contact-info i .title-contact {
+    color: var(--miel);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-info .h5 {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 700;
+    color: black;
+    /* Utilise votre variable existante */
+    text-transform: uppercase;
+    /* Optionnel */
+    letter-spacing: 1px;
+    /* Optionnel */
+    padding-right: 20px;
+}
+
+.contact-info {
+    background-color: rgba(255, 255, 255, 0.1);
+
+    border-radius: 8px;
+    border-left: 4px solid var(--miel);
+}
+
+.address-icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+/* Couleurs des icônes */
+.fa-map-marker-alt {
+    color: red;
+}
+
+.fa-whatsapp {
+    color: #25D366;
+}
+
+.fa-envelope {
+    color: #0e0d0d;
+}
+
+
+.contact-info address p {
+    margin-bottom: 0.5rem;
+    font-style: normal;
+}
+
+.sending {
+    position: relative;
+}
+
+.sending:after {
+    content: " ";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: sending 1.2s linear infinite;
+}
+
+@keyframes sending {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sent {
+    background-color: #28a745 !important;
+}
+
+/* Spinner pour le bouton */
+.spinner-border {
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+/* Alertes Bootstrap */
+.alert {
+    transition: opacity 0.15s linear;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 1rem;
+    }
+}
+
+/* Ajoutez ces règles à votre section Contact */
+#contact .contact-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Pour une meilleure apparence sur mobile */
+@media (max-width: 768px) {
+    #contact .contact-btn {
+        width: 100% !important;
+        /* Surcharge la largeur de 25% sur mobile */
+    }
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--miel);
+    outline: none;
+}
+
+.card-body h3 {
+    text-align: center;
+}
+
+.map-container {
+    height: 100%;
+    min-height: 250px;
+    width: 100%;
+}
+
+.map-container iframe {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 20px 0;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+
+
+
+
+
+
+/* ========= SECTION PARRAINAGE ========= */
+#parrainage {
+    background: url('/images/Image collée (6).png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 0;
+    position: relative;
+}
+
+#parrainage .container {
+    position: static;
+}
+
+/* Titres */
+#parrainage .section-title {
+    font-family: "Indie Flower", cursive;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+/* Classe spécifique pour les h3 */
+#parrainage .h3-parrainage {
+    font-size: 1.2rem;
+}
+
+.p-main-card {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    word-spacing: 0.05em;
+    color: #333;
+    text-align: justify;
+    text-justify: inter-word;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.2rem;
+    padding: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.p-main-card:hover {
+    color: #222;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.08);
+}
+
+#parrainage h5.card-title {
+    color: white !important;
+    font-family: "Indie Flower", cursive;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#parrainage h5.card-title:hover {
+    color: black !important;
+}
+
+/* Carte principale */
+#parrainage .main-card {
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* En-tête et onglets */
+#parrainage .main-card .card-header {
+    background: linear-gradient(45deg, var(--orange-moderne), var(--jaune-moderne)) !important;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 0;
+    border: none;
+}
+
+#parrainage-tabs {
+    border: none;
+    flex-wrap: nowrap;
+}
+
+#parrainage-tabs .nav-link {
+    color: white !important;
+    font-weight: bold;
+    border: none !important;
+    padding: 12px 15px;
+    font-family: "Indie Flower", cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: transparent !important;
+    position: relative;
+    border-bottom: 3px solid transparent !important;
+}
+
+#parrainage-tabs .nav-link:hover {
+    color: var(--noir-profond) !important;
+    border-bottom-color: var(--jaune-moderne) !important;
+}
+
+#parrainage-tabs .nav-link.active {
+    color: white !important;
+    border-bottom-color: white !important;
+}
+
+/* Contenu des onglets */
+#parrainage .tab-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Cartes de parrainage */
+.parrainage-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.parrainage-description {
+    font-family: "Indie Flower", cursive;
+    color: #eaaa09;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.parrainage-card:hover {
+    transform: translateY(-5px);
+}
+
+.parrainage-card .card-header {
+    font-family: "Indie Flower", cursive;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    padding: 0.75rem;
+    color: white !important;
+}
+
+.parrainage-card .card-body {
+    padding: 1rem;
+}
+
+/* Boutons */
+#parrainage .btn-primary {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    background: var(--degrade-moderne);
+    border: 1px solid var(--noir-profond);
+    color: var(--noir-profond);
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#parrainage .btn-primary:hover {
+    transform: translateY(-3px);
+    color: white !important;
+    background: var(--orange-moderne);
+}
+
+/* ========= MEDIA QUERIES ========= */
+@media (max-width: 768px) {
+
+    /* Styles généraux */
+    #parrainage {
+        padding: 60px 0;
+    }
+
+    .p-main-card {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Onglets */
+    #parrainage-tabs .nav-link {
+        font-size: 1.5rem;
+        padding: 10px 5px !important;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    #parrainage-tabs .text-label {
+        display: none !important;
+    }
+
+    /* Cartes principales */
+    #parrainage .main-card {
+        min-height: 450px;
+    }
+
+    /* Titres h3 */
+    #parrainage .h3-parrainage {
+        font-size: 1.3rem;
+        position: relative;
+        padding-left: 0.7em;
+        text-indent: -0.7em;
+        display: inline-block;
+        justify-content: center;
+    }
+
+
+    #parrainage .h3-parrainage::first-letter {
+        visibility: hidden;
+        width: 0;
+    }
+
+    /* Cartes de parrainage */
+    #parrainage .col-lg-3.col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #parrainage .parrainage-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    #parrainage .parrainage-card .card-header h4 {
+        font-size: 1.2rem !important;
+        white-space: nowrap;
+    }
+
+    #parrainage .parrainage-card .card-body {
+        padding: 15px;
+    }
+
+    #parrainage .parrainage-card .h3-parrainage {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.1em;
+        line-height: 1.2;
+        text-indent: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    #parrainage .parrainage-card .h3-parrainage::first-letter {
+        visibility: visible !important;
+    }
+
+    #parrainage .parrainage-card .h3-parrainage br {
+        display: none;
+    }
+
+    #parrainage .parrainage-card .parrainage-description {
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+
+    #parrainage .parrainage-card ul {
+        font-size: 0.9rem !important;
+        padding-left: 10px;
+    }
+
+    #parrainage .parrainage-card .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    #parrainage h5.card-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #parrainage .section-title {
+        font-size: 2rem;
+    }
+
+    #parrainage .btn-primary {
+        padding: 8px 16px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #parrainage .parrainage-card .h3-parrainage br {
+        content: " ";
+        display: block;
+        margin-top: -0.3em;
+        /* Ajustez cette valeur pour réduire l'espace */
+        height: 0;
+
+    }
+
+    #parrainage .parrainage-card .h3-parrainage {
+        line-height: 1.3;
+        /* Conserve un interligne harmonieux */
+    }
+}
+
+
+
+
+
+
+
+/* Section Blog/Réseaux ***************************************/
+
+#blog {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+#blog .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#blog .card:hover {
+    transform: translateY(-5px);
+}
+
+#blog .card-header,
+#blog .card-footer {
+    border: none;
+}
+
+/* Boutons réseaux sociaux */
+.btn-social {
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    background: var(--degrade-moderne);
+    border: 1px solid var(--noir-profond);
+    color: var(--noir-profond);
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-social i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.btn-social:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    color: var(--blanc);
+    background: var(--orange-moderne);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-social {
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-icons {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* Footer */
+.footer {
+    background-color: var(--noir-mat);
+    color: var(--blanc);
+    padding: 40px 0;
+}
+
+.footer h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--jaune-moderne);
+}
+
+.footer a {
+    color: var(--jaune-moderne);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--orange-moderne);
+}
+
+.footer .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer .list-unstyled li {
+    margin-bottom: 0.5rem;
+    color: var(--blanc);
+}
+
+.footer .text-center {
+    border-top: 1px solid var(--jaune-moderne);
+    padding-top: 20px;
+    margin-top: 20px;
+    color: var(--blanc);
+}
+
+.footer .text-center p {
+    font-size: 0.9rem;
+    color: var(--blanc);
+}
+
+.footer .text-center a {
+    color: var(--jaune-moderne);
+    text-decoration: underline;
+}
+
+footer.footer p {
+    color: var(--blanc) !important;
+}
+
+/* Styles pour le titre de la page Mentions Légales */
+h1 {
+    color: var(--noir-profond);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    background-color: var(--blanc);
+}
+
+/* Styles pour les sous-titres */
+h2 {
+    color: var(--orange-moderne);
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Styles pour le texte */
+p {
+    color: var(--gris-anthracite);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Style pour tous les h2 */
+h2 {
+    color: #000000;
+    font-weight: bold;
+}
+
+.section h2 {
+    color: #000000;
+}
+
+.container h2 {
+    color: #000000;
+}
+
+h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
