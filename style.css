@@ -38,7 +38,7 @@ body {
 .brand-name {
   font-family: 'Indie Flower', cursive;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #080808;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
@@ -1458,7 +1458,7 @@ button:active:focus {
 
 /* ========= SECTION PARRAINAGE ========= */
 #parrainage {
-    background: url('/images/Image collée (6).png') no-repeat center center fixed;
+    background: url('/images/modern_stylish_hexagonal_background_wallpaper.eps') no-repeat center center fixed;
     background-size: cover;
     padding: 80px 0;
     position: relative;
