@@ -56,13 +56,13 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .brand-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .brand-name {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
